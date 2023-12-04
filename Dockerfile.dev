@@ -1,0 +1,5 @@
+# Dockerfile for building rust projects
+#    docker build -t ubuntu/light-dev:1.0 -f Dockerfile.dev .
+#    docker run -ti --rm --cap-add NET_ADMIN -w /project -v "`pwd`:/project" ubuntu/light-dev:1.0
+FROM rust
+RUN apt update && apt install -y llvm-dev libclang-dev clang && apt clean
